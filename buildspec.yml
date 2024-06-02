@@ -7,6 +7,7 @@ phases:
 #      nodejs: 12.x
     commands:
       - python -m pip install --upgrade pip && pip install -r requirements.txt
+      - playwright install
 #      - npm install  # Instalar dependências Node.js, se necessário
   pre_build:
     commands:
