@@ -1,0 +1,26 @@
+version: '0.2'
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+#      nodejs: 12.x
+    commands:
+      - python -m pip install --upgrade pip && pip install -r requirements.txt
+#      - npm install  # Instalar dependências Node.js, se necessário
+  pre_build:
+    commands:
+      - echo Iniciando testes...
+  build:
+    commands:
+      - pytest
+  post_build:
+    commands:
+      - echo Testes concluídos
+      # - aws s3 cp reports/ s3://reports-pipeline --recursive  # Enviar relatórios de teste para o S3
+      # - aws s3 cp logs/ s3://reports-pipeline --recursive  # Enviar relatórios de teste para o S3
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'reports'
+  discard-paths: yes
