@@ -20,7 +20,7 @@ def check_result(page: Page, expected_result: str):
 @pytest.fixture(scope='session')
 def browser_context():
     playwright = sync_playwright().start()
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch()
     context = browser.new_context()
     yield context
     context.close()
