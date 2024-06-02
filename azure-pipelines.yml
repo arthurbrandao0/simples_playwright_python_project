@@ -6,8 +6,8 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+pool: 
+  name: myPool
 
 steps:
 - task: UsePythonVersion@0
