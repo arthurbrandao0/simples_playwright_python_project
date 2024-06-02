@@ -23,6 +23,4 @@ phases:
       # - aws s3 cp logs/ s3://reports-pipeline --recursive  # Enviar relatórios de teste para o S3
 artifacts:
   files:
-    - '**/*'
-  base-directory: 'reports'
-  discard-paths: yes
+    - 'report.html'
